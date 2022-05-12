@@ -4,10 +4,11 @@ import { MikroORM } from '@mikro-orm/core'
 import path from 'path';
 
 export default {
-migrations: {
+  allowGlobalContext: true,
+  migrations: {
   path: path.join(__dirname, './migrations'),
   glob: '!(*.d).{js,ts}'
-},
+  },
   entities: [Post],
   dbName: 'inkling',
   type: 'postgresql',
